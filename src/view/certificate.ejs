@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <title>Course Completion Certificate</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* height: 100vh; */
+      }
+      .container {
+        width: 1000px;
+        height: 717px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        text-align: center;
+      }
+      .bgImage {
+        /* width: 100%;
+        height: 100%; */
+        width: 1000px;
+        height: 717px;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .certificate-container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        margin: auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+      }
+      .logo {
+        width: 200px;
+        height: auto;
+        margin-top: 14%;
+      }
+      .certificate-title {
+        font-size: 24px;
+        /* margin-top: 10%; */
+      }
+      .certificate-body {
+        max-width: 70%;
+        font-size: 18px;
+        color: rgba(0, 0, 0, 0.8);
+        margin: 0px auto;
+      }
+      .recipient-name {
+        font-size: 30px;
+        font-weight: bold;
+        color: #3498db;
+      }
+      .course-name {
+        font-size: 28px;
+        font-weight: bold;
+        margin: 10px 0;
+        color: #f39c12;
+      }
+      .divider {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        display: none;
+      }
+      .signature-section {
+        max-width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px auto;
+      }
+      .signature {
+        text-align: center;
+      }
+      .signature-name {
+        font-size: 32px;
+        font-weight: 500;
+        font-family: "Great Vibes", cursive;
+      }
+      .footer {
+        margin-top: 5px;
+        font-size: 14px;
+      }
+      .footer a {
+        color: rgba(0, 0, 0, 0.804);
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+      }
+      .footer a:hover {
+        color: #f39c12;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="https://res.cloudinary.com/dxyt4v9lc/image/upload/v1741671725/certificate-bg_cxsqmz.png"
+        alt="background-image"
+        class="bgImage"
+      />
+      <div class="certificate-container">
+        <img
+          class="logo"
+          src="https://res.cloudinary.com/dxyt4v9lc/image/upload/v1741420591/logo_t2mwub.png"
+          alt="Logo"
+        />
+        <h1 class="certificate-title">Certificate of Completion</h1>
+        <p class="certificate-body">This is to certify that</p>
+        <p class="recipient-name"><%= studentName %></p>
+        <p class="certificate-body">
+          has successfully completed the
+          <strong><%= courseTitle %></strong> course with outstanding
+          performance and dedication.
+        </p>
+        <p class="course-name">
+          Course Title: <strong><%= courseTitle %></strong>
+        </p>
+        <div class="divider">
+          <p class="organization-name">Awarded by: <%= organizationName %></p>
+          <p class="date">Date of Completion: <%= completionDate %></p>
+        </div>
+        <p class="certificate-body">
+          We commend the recipient for their dedication and wish them continued
+          success in their future endeavors.
+        </p>
+        <div class="signature-section">
+          <div class="signature">
+            <p class="signature-name"><%= instructorName %></p>
+            <p>Instructor</p>
+          </div>
+        </div>
+        <div class="footer">
+          <p>
+            Certificate ID:
+            <a
+              href="https://yourwebsite.com/certificate/<%= certificateId %>"
+              target="_blank"
+            >
+              <%= certificateId %>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
